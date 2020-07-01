@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useToggleState from "../hooks/useToggleState";
+import "./styles/SingleQuestion.css";
 
 export default function SingleQuestion({
   question,

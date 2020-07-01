@@ -23,5 +23,5 @@ export default (initialValue = []) => {
     setList(list.filter((item) => item.id !== id));
   };
 
-  return [list, addItem, updateItem, deleteItem];
+  return [list, addItem, updateItem, deleteItem, setList];
 };

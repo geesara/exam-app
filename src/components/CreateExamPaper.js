@@ -3,16 +3,13 @@ import useListAUDState from "../hooks/useListAUDState";
 import SingleQuestion from "./SingleQuestion";
 import CreateQuestion from "./CreateQuestion";
 
-export default function CreateExamPaper() {
+export default function CreateExamPaper({ exam, updateExam }) {
   const [
     questions,
     addQuestion,
     updateQuestion,
     deleteQuestion,
-  ] = useListAUDState([
-    { id: "1", question: "What is your name?" },
-    { id: "2", question: "How old are you?" },
-  ]);
+  ] = useListAUDState(exam.questions);
 
   return (
     <div className="createExamPaper">
@@ -25,6 +22,9 @@ export default function CreateExamPaper() {
         />
       ))}
       <CreateQuestion addQuestion={addQuestion} />
+      <button onClick={() => updateExam(exam.id, { questions: questions })}>
+        Save Exam
+      </button>
     </div>
   );
 }

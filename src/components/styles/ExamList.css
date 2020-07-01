@@ -1,0 +1,14 @@
+.ExamList {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.ExamList-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid dimgray;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.ExamList-item p {
+  margin-right: auto;
+}
