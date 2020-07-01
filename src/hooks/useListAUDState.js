@@ -5,7 +5,7 @@ export default (initialValue = []) => {
   const [list, setList] = useState(initialValue);
 
   const addItem = (newItem) => {
-    setList([...list, { id: uuidv4, ...newItem }]);
+    setList([...list, { id: uuidv4(), ...newItem }]);
   };
   const updateItem = (id, updatedItem) => {
     setList(
