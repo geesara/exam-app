@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import CreateExamPaper from "./components/CreateExamPaper";
+import UpdateExamPaper from "./components/UpdateExamPaper";
 import useListAUDState from "./hooks/useListAUDState";
 import ExamList from "./components/ExamList";
 import AnswerExamPaper from "./components/AnswerExamPaper";
+import CreateExamPaper from "./components/CreateExamPaper";
 
 export default function ExamApp() {
   const [exams, addExam, updateExam, deleteExam] = useListAUDState(
@@ -29,7 +30,7 @@ export default function ExamApp() {
         </Route>
         {exams.map((exam) => (
           <Route key={exam.id} path={`/exam/${exam.id}`}>
-            <CreateExamPaper exam={exam} updateExam={updateExam} />
+            <UpdateExamPaper exam={exam} updateExam={updateExam} />
           </Route>
         ))}
         {exams.map((exam) => (
@@ -37,7 +38,11 @@ export default function ExamApp() {
             <AnswerExamPaper exam={exam} />
           </Route>
         ))}
+        <Route exact path="/new-exam">
+          <CreateExamPaper addExam={addExam} />
+        </Route>
       </Switch>
+      <Link to="/new-exam">New Exam</Link>
       <button onClick={() => addExam({ questions: [] })}>NewExam</button>
       <button onClick={debug}>debug</button>
       <Link to="/">Home</Link>
