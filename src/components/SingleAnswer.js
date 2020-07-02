@@ -16,7 +16,6 @@ export default function SingleAnswer({
   const handleNextButtonClick = () => {
     updateAnswer(answer.id, { question: answer.question, answer: answerText });
     setCurrentQIndex(currentQIndex + 1);
-    // console.log(answerText, answer.answer);
   };
 
   const handlePrevButtonClick = () => {
