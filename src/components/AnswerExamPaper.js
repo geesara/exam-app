@@ -19,9 +19,8 @@ export default function AnswerExamPaper({ exam }) {
           answersLength={answers.length}
         />
       )}
-      {answers.length <= currentQIndex && "You finished Answering!"}
+      {answers.length <= currentQIndex && <p>You finished Answering!</p>}
       {answers.length <= currentQIndex && <FinishExam answers={answers} />}
-      <p>current index: {currentQIndex}</p>
     </div>
   );
 }

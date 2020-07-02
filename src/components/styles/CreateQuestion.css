@@ -1,0 +1,9 @@
+.CreateQuestion {
+  margin-bottom: 20px;
+}
+.CreateQuestion input {
+  display: block;
+  padding: 5px 10px;
+  width: 70%;
+  font-size: 1.2rem;
+}

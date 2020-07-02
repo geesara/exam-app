@@ -1,0 +1,13 @@
+.FinishExam-answerbox {
+  background-color: rgb(199, 255, 223);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.FinishExam-answerbox h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.FinishExam-answerbox p {
+  margin-top: 0;
+  margin-bottom: 0;
+}

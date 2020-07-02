@@ -7,10 +7,23 @@ export default function ExamList({ exams, deleteExam }) {
     <div className="ExamList">
       {exams.map((exam) => (
         <div className="ExamList-item" key={exam.id}>
-          <p>{exam.name ? exam.name : exam.id}</p>
-          <Link to={`/answer/${exam.id}`}>Answer</Link>
-          <Link to={`/exam/${exam.id}`}>Edit</Link>
-          <button onClick={() => deleteExam(exam.id)}>Delete</button>
+          <div className="ExamList-text">
+            <h3>{exam.name ? exam.name : exam.id}</h3>
+            <p>{exam.questions.length} Questions</p>
+          </div>
+
+          <Link to={`/answer/${exam.id}`} className="ExamList-itembtn">
+            Answer
+          </Link>
+          <Link to={`/exam/${exam.id}`} className="ExamList-itembtn">
+            Edit
+          </Link>
+          <button
+            onClick={() => deleteExam(exam.id)}
+            className="ExamList-itembtn"
+          >
+            Delete
+          </button>
         </div>
       ))}
     </div>

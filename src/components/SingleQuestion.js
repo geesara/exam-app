@@ -20,22 +20,32 @@ export default function SingleQuestion({
     <div className="SingleQuestion">
       {isUpdating ? (
         <>
-          <form onSubmit={handleSubmit}>
+          <form className="SingleQuestion-form" onSubmit={handleSubmit}>
             <input
+              className="SingleQuestion-input"
               type="text"
               value={updatedQuestion}
               onChange={(e) => setUpdatedQuestion(e.target.value)}
             />
           </form>
-          <button onClick={handleSubmit}>Save</button>
+          <button className="SingleQuestion-btn" onClick={handleSubmit}>
+            Save
+          </button>
         </>
       ) : (
         <>
-          <p>{question.question}</p>
-          <button onClick={toggleIsUpdating}>Edit</button>
+          <p className="SingleQuestion-text">{question.question}</p>
+          <button className="SingleQuestion-btn" onClick={toggleIsUpdating}>
+            Edit
+          </button>
         </>
       )}
-      <button onClick={() => deleteQuestion(question.id)}>Delete</button>
+      <button
+        className="SingleQuestion-btn"
+        onClick={() => deleteQuestion(question.id)}
+      >
+        Delete
+      </button>
     </div>
   );
 }

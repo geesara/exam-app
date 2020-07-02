@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useListAUDState from "../hooks/useListAUDState";
 import SingleQuestion from "./SingleQuestion";
 import CreateQuestion from "./CreateQuestion";
+import "./styles/CreateExamPaper.css";
 
 export default function CreateExamPaper({ addExam }) {
   const [
@@ -13,8 +14,9 @@ export default function CreateExamPaper({ addExam }) {
   const [examName, setExamName] = useState("");
 
   return (
-    <div className="createExamPaper">
+    <div className="CreateExamPaper">
       <input
+        className="UpdateExamPaper-titleinput"
         type="text"
         value={examName}
         onChange={(e) => setExamName(e.target.value)}
@@ -29,7 +31,10 @@ export default function CreateExamPaper({ addExam }) {
         />
       ))}
       <CreateQuestion addQuestion={addQuestion} />
-      <button onClick={() => addExam({ questions: questions, name: examName })}>
+      <button
+        className="UpdateExamPaper-savebtn"
+        onClick={() => addExam({ questions: questions, name: examName })}
+      >
         Save Exam
       </button>
     </div>

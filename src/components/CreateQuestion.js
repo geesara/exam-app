@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles/CreateQuestion.css";
 
 export default function CreateQuestion({ addQuestion }) {
   const [newQuestion, setNewQuestion] = useState("");
