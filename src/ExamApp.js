@@ -3,6 +3,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import CreateExamPaper from "./components/CreateExamPaper";
 import useListAUDState from "./hooks/useListAUDState";
 import ExamList from "./components/ExamList";
+import AnswerExamPaper from "./components/AnswerExamPaper";
 
 export default function ExamApp() {
   const [exams, addExam, updateExam, deleteExam] = useListAUDState(
@@ -29,6 +30,11 @@ export default function ExamApp() {
         {exams.map((exam) => (
           <Route key={exam.id} path={`/exam/${exam.id}`}>
             <CreateExamPaper exam={exam} updateExam={updateExam} />
+          </Route>
+        ))}
+        {exams.map((exam) => (
+          <Route key={exam.id} path={`/answer/${exam.id}`}>
+            <AnswerExamPaper exam={exam} />
           </Route>
         ))}
       </Switch>
