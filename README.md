@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Exam App
+
+This is a basic prototype of a app that user can create new exams and answer them
+
 ## Available Scripts
 
 In the project directory, you can run:
